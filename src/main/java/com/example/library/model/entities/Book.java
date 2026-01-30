@@ -16,6 +16,7 @@ public class Book implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title, author;
+	private Boolean available;
 	
 	public Book() {}
 
@@ -23,6 +24,7 @@ public class Book implements Serializable {
 		this.id = id;
 		this.title = title;
 		this.author = author;
+		available = true;
 	}
 
 	public Long getId() {
@@ -47,5 +49,13 @@ public class Book implements Serializable {
 
 	public void setAuthor(String author) {
 		this.author = author;
+	}
+
+	public Boolean getAvailable() {
+		return available;
+	}
+
+	public void setAvailable(Boolean available) {
+		this.available = available;
 	}
 }

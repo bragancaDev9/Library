@@ -25,6 +25,12 @@ public class BookService {
 		return book.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 	
+	public Book findByTitle(String title) {
+		Optional<Book> book = bookRepository.findByTitle(title);
+		
+		return book.orElseThrow(() -> new ResourceNotFoundException(title));
+	}
+	
 	public Book insert(Book book) {
 		return bookRepository.save(book);
 	}
